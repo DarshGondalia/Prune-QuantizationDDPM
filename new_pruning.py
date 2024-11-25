@@ -14,7 +14,9 @@ from diffusers.models.unets.unet_2d_blocks import (DownBlock2D, UNetMidBlock2D,
 
 # print(dir(models))
 ## Load DDPM pipeline
-pipeline = DDPMPipeline.from_pretrained("./ddpm_cifar10_32")
+pipeline = DDPMPipeline.from_pretrained("google/ddpm-cifar10-32")
+# pipeline = DDPMPipeline.from_pretrained("./ddpm_cifar10_32")
+pipeline.save_pretrained("./ddpm_cifar10_32")
 scheduler = pipeline.scheduler
 
 # Load the pre-trained UNet2DModel
